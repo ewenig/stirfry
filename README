@@ -1,0 +1,9 @@
+Stirfry parses the Gracie's Weekly Menus site for days when stir fry are available.
+
+Files:
+-----
+stir-fry.sh :: grabs the menu and dumps it to the stirfry directory for parsing, then calls the perl script.
+stir-fry.pl :: parses the perl script
+stirfry.js  :: javascript for highlighting the correct day & telling you if there is stir fry right now.
+
+Usage: Run stirfry.sh as a cronjob every Sunday at midnight (0 0 * * 0). Change the absolute paths in stir-fry.sh and stir-fry.pl to match your web server directory.
