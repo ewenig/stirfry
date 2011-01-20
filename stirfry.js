@@ -24,13 +24,22 @@ function init() {
    } 
 
    if (isTime == 0) {
-      disp_section("Is there stir fry right now?","No.");
-   } else {
-      disp_section("Is there stir fry right now?","You bet there is.");
+      disp_section("Is there stir fry right now?","No.",0);
+   } else if (isTime == 1) {
+      disp_section("Is there stir fry right now?","You bet there is.",weekday);
    }
 }
 
-function disp_section(title,body) {
+function disp_section(title,body,weekday) {
+   if (weekday == 5) {
+      var mar = document.createElement('marquee');
+      mar.innerHTML = "IT'S STIR FRIDAY";
+      mar.setAttribute('scrollamount','50');
+      mar.style.fontSize = '1000%';
+      mar.style.color = 'red';
+      document.body.appendChild(mar);
+      return;
+   }
    var h1 = document.createElement('h1');
    h1.innerHTML = title;
    var p = document.createElement('p');
