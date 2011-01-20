@@ -63,6 +63,7 @@ for (my $i=0;$i<7;$i++) {
 }
 
 print "</table>\n
-<div style='position:absolute;bottom:0;font-size:75%;text-align:center;'>*Asian stir fry only. Thai stir fry is gross.</div>\n
+<div style='position:absolute;bottom:0;font-size:75%;'>*Asian stir fry only. Thai stir fry is gross.</div>\n
+<div style='position:absolute;bottom:0;right:5px;font-size:75%;'><a href='https://github.com/ewenig/stirfry'>We're on Github now apparently</a></div>\n
 <br/>";
 print end_html;
