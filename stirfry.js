@@ -12,13 +12,13 @@ function init() {
    if (document.getElementById((weekday+1) + '.1').innerHTML == 'Yes') {
       var start = new Date(now.getFullYear(),now.getMonth(),now.getDate(),hours[weekday][1][0],hours[weekday][1][1]);
       var end = new Date(now.getFullYear(),now.getMonth(),now.getDate(),hours[weekday][1][2],hours[weekday][1][3]);
-      if ((now - start >= 0) || (end - now >= 0)) {
+      if ((now - start >= 0) && (end - now >= 0)) {
          isTime = 1;
       }
    } else if (document.getElementById((weekday+1) + '.2').innerHTML == 'Yes') {
       var start = new Date(now.getFullYear(),now.getMonth(),now.getDate(),hours[weekday][2][0],hours[weekday][2][1]);
       var end = new Date(now.getFullYear(),now.getMonth(),now.getDate(),hours[weekday][2][2],hours[weekday][2][3]);
-      if ((now - start >= 0) || (end - now >= 0)) {
+      if ((now - start >= 0) && (end - now >= 0)) {
 	 isTime = 1;
       }
    } 
