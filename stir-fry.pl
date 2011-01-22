@@ -19,7 +19,7 @@ sub get_stir_fry {
 			if ($node eq "") { $stirfry[$i][$k] = "No data"; $j=1;}
 			if ($j==0) {
 				$text = $node->xml;
-				if ($text =~ m/Stir Fry/i) {
+				if ($text =~ m/Stir( |-)Fry/i) {
 					$stirfry[$i][$k] = "Yes";
 				} else {
 					$stirfry[$i][$k] = "No";
