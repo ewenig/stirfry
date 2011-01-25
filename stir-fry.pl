@@ -4,7 +4,7 @@ use warnings;
 use strict;
 use lib '/users/u18/eli/';
 use XML::DOM::Lite qw(Parser);
-use CGI qw(:standard);
+use CGI;
 
 sub get_stir_fry {
 	my @weekdays = ('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday');
@@ -41,29 +41,40 @@ for (my $i=0;$i<7;$i++) {
 	}
 }
 
-print start_html( -title => "Stir Weekdays",
+my $page = new CGI;
+
+print $page->start_html( -title => "Stir Weekdays",
                   -script => { -type => "JavaScript",
 				               -src  => "stirfry.js" }
 				);
-print "<h1 align='center'>Is there stir fry* today?</h1>\n";
-print "<table border='1' align='center'><tr style='background-color:lightgrey;'><strong><td>Weekday</td>";
+print $page->h1({-align => 'center'},"Is there stir fry* today?");
+print $page->start_table({-border => 1,-align => 'center'});
+print $page->start_Tr({-style => 'background-color:lightgrey;'});
+print $page->td("Weekday");
 if ($breakfast) {
-	print "<td>Breakfast</td>";
+	print $page->td("Breakfast");
 }
-print "<td>Lunch</td><td>Dinner</td></strong></tr>";
+print $page->td("Lunch");
+print $page->td("Dinner");
+print $page->end_Tr;
 
 for (my $i=0;$i<7;$i++) {
-	print "<tr id='" . ($i+1) . "'><td><strong>$weekdays[$i]</strong></td>\n";
+    print $page->start_Tr({-id => ($i+1)});
+	print $page->start_td;
+	print $page->strong($weekdays[$i]);
+	print $page->end_td;
 	for (my $k=0;$k<3;$k++) {
 		if ($k != 0 || $breakfast) {
-		   print "<td id='" . ($i+1) . ".$k'>" . $stir_fry[$i][$k] . "</td>\n";
+		   print $page->td({-id => ($i+1) . ".$k"},$stir_fry[$i][$k]);
 		 }
 	}
-	print "</tr>\n";
+	print $page->end_Tr;
 }
 
-print "</table>\n
-<div style='position:absolute;bottom:0;font-size:75%;'>*Asian stir fry only. Thai stir fry is gross.</div>\n
-<div style='position:absolute;bottom:0;right:5px;font-size:75%;'><a href='https://github.com/ewenig/stirfry'>We're on Github now apparently</a></div>\n
-<br/>";
-print end_html;
+print $page->end_table;
+print $page->div({-style => 'position:absolute;bottom:0;font-size:75%;'},"*Asian stir fry only. Thai stir fry is gross.");
+print $page->start_div({-style => 'position:absolute;bottom:0;right:5px;font-size:75%;'});
+print $page->a({-href => 'https://github.com/ewenig/stirfry'},"We're on Github now apparently");
+print $page->end_div;
+print $page->br;
+print $page->end_html;
