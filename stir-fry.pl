@@ -44,9 +44,9 @@ for (my $i=0;$i<7;$i++) {
 my $page = new CGI;
 
 print $page->start_html( -title => "Stir Weekdays",
-                  -script => { -type => "JavaScript",
-				               -src  => "stirfry.js" }
-				);
+                         -script => { -type => "JavaScript",
+						              -src  => "stirfry.js" }
+				       );
 print $page->h1({-align => 'center'},"Is there stir fry* today?");
 print $page->start_table({-border => 1,-align => 'center'});
 print $page->start_Tr({-style => 'background-color:lightgrey;'});
@@ -59,7 +59,7 @@ print $page->td("Dinner");
 print $page->end_Tr;
 
 for (my $i=0;$i<7;$i++) {
-    print $page->start_Tr({-id => ($i+1)});
+	print $page->start_Tr({-id => ($i+1)});
 	print $page->start_td;
 	print $page->strong($weekdays[$i]);
 	print $page->end_td;
