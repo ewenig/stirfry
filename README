@@ -6,7 +6,7 @@ stir-fry.sh :: grabs the menu and dumps it to the stirfry directory for parsing,
 stir-fry.pl :: parses the menu and scoops out a nice HTML file
 stirfry.js  :: javascript for highlighting the correct day & telling you if there is stir fry right now.
 
-Usage: Run stirfry.sh as a cronjob every Sunday at midnight (0 0 * * 0). Change the absolute paths in stir-fry.sh and stir-fry.pl to match your web server directory.
+Usage: Run stirfry.sh as a cronjob every Monday at midnight (0 0 * * 1). Change the absolute paths in stir-fry.sh and stir-fry.pl to match your web server directory.
 
 OR,
 
