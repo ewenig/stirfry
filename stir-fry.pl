@@ -59,13 +59,13 @@ print $page->td("Dinner");
 print $page->end_Tr;
 
 for (my $i=0;$i<7;$i++) {
-	print $page->start_Tr({-id => ($i+1)});
+	print $page->start_Tr({-id => (($i+1) % 7)});
 	print $page->start_td;
 	print $page->strong($weekdays[$i]);
 	print $page->end_td;
 	for (my $k=0;$k<3;$k++) {
 		if ($k != 0 || $breakfast) {
-		   print $page->td({-id => ($i+1) . ".$k"},$stir_fry[$i][$k]);
+		   print $page->td({-id => (($i+1) % 7) . ".$k"},$stir_fry[$i][$k]);
 		 }
 	}
 	print $page->end_Tr;

@@ -8,16 +8,15 @@ function init() {
    //is there stir fry now?
    var isTime = 0;
    var hours = setup_hours();
-   weekday--;
-   if (document.getElementById((weekday+1) + '.1').innerHTML == 'Yes') {
-      var start = new Date(now.getFullYear(),now.getMonth(),now.getDate(),hours[weekday][1][0],hours[weekday][1][1]);
-      var end = new Date(now.getFullYear(),now.getMonth(),now.getDate(),hours[weekday][1][2],hours[weekday][1][3]);
+   if (document.getElementById((weekday) + '.1').innerHTML == 'Yes') {
+      var start = new Date(now.getFullYear(),now.getMonth(),now.getDate(),hours[weekday+1][1][0],hours[weekday+1][1][1]);
+      var end = new Date(now.getFullYear(),now.getMonth(),now.getDate(),hours[weekday+1][1][2],hours[weekday+1][1][3]);
       if ((now - start >= 0) && (end - now >= 0)) {
          isTime = 1;
       }
-   } else if (document.getElementById((weekday+1) + '.2').innerHTML == 'Yes') {
-      var start = new Date(now.getFullYear(),now.getMonth(),now.getDate(),hours[weekday][2][0],hours[weekday][2][1]);
-      var end = new Date(now.getFullYear(),now.getMonth(),now.getDate(),hours[weekday][2][2],hours[weekday][2][3]);
+   } else if (document.getElementById((weekday) + '.2').innerHTML == 'Yes') {
+      var start = new Date(now.getFullYear(),now.getMonth(),now.getDate(),hours[weekday+1][2][0],hours[weekday+1][2][1]);
+      var end = new Date(now.getFullYear(),now.getMonth(),now.getDate(),hours[weekday+1][2][2],hours[weekday+1][2][3]);
       if ((now - start >= 0) && (end - now >= 0)) {
 	 isTime = 1;
       }
@@ -63,9 +62,9 @@ function setup_hours() {
    hours[5][0] = new Array(8,  00, 10, 54);
    hours[5][1] = new Array(11, 00, 14, 30);
    hours[5][2] = new Array(16, 30, 19, 00);
-   hours[6][0] = new Array(11, 00, 14, 30);
-   hours[6][1] = new Array(11, 00, 14, 30);
-   hours[6][2] = new Array(16, 30, 19, 00);
+   hours[0][0] = new Array(11, 00, 14, 30);
+   hours[0][1] = new Array(11, 00, 14, 30);
+   hours[0][2] = new Array(16, 30, 19, 00);
 
    return hours;
 }
