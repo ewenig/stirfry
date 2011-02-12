@@ -14,7 +14,7 @@ function init() {
       if ((now - start >= 0) && (end - now >= 0)) {
          isTime = 1;
       }
-   } else if (document.getElementById((weekday) + '.2').innerHTML == 'Yes') {
+   } if (document.getElementById((weekday) + '.2').innerHTML == 'Yes') {
       var start = new Date(now.getFullYear(),now.getMonth(),now.getDate(),hours[weekday+1][2][0],hours[weekday+1][2][1]);
       var end = new Date(now.getFullYear(),now.getMonth(),now.getDate(),hours[weekday+1][2][2],hours[weekday+1][2][3]);
       if ((now - start >= 0) && (end - now >= 0)) {
@@ -50,24 +50,24 @@ function disp_section(title,body,weekday) {
 }
 
 function setup_hours() {
-   var hours = new Array(7);
-   for (var i=0;i<7;i++) {
+   var hours = new Array(8);
+   for (var i=0;i<8;i++) {
       hours[i] = new Array(3);
    }
-   for (var i=1;i<6;i++) {
+   for (var i=2;i<7;i++) {
       hours[i][0] = new Array(7,  00, 10, 00);
       hours[i][1] = new Array(11, 00, 14, 30);
       hours[i][2] = new Array(16, 30, 19, 30);
    }
-   hours[5][0] = new Array(7,  00, 10, 00);
-   hours[5][1] = new Array(11, 00, 14, 30);
-   hours[5][2] = new Array(16, 30, 19, 00);
-   hours[6][0] = new Array(8,  00, 10, 54);
+   hours[6][0] = new Array(7,  00, 10, 00);
    hours[6][1] = new Array(11, 00, 14, 30);
    hours[6][2] = new Array(16, 30, 19, 00);
-   hours[0][0] = new Array(11, 00, 14, 30);
-   hours[0][1] = new Array(11, 00, 14, 30);
-   hours[0][2] = new Array(16, 30, 19, 00);
+   hours[7][0] = new Array(8,  00, 10, 54);
+   hours[7][1] = new Array(11, 00, 14, 30);
+   hours[7][2] = new Array(16, 30, 19, 00);
+   hours[1][0] = new Array(11, 00, 14, 30);
+   hours[1][1] = new Array(11, 00, 14, 30);
+   hours[1][2] = new Array(16, 30, 19, 00);
 
    return hours;
 }
