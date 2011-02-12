@@ -54,14 +54,17 @@ function setup_hours() {
    for (var i=0;i<7;i++) {
       hours[i] = new Array(3);
    }
-   for (var i=0;i<5;i++) {
+   for (var i=1;i<6;i++) {
       hours[i][0] = new Array(7,  00, 10, 00);
       hours[i][1] = new Array(11, 00, 14, 30);
-      hours[i][2] = new Array(16, 30, 19, 00);
+      hours[i][2] = new Array(16, 30, 19, 30);
    }
-   hours[5][0] = new Array(8,  00, 10, 54);
+   hours[5][0] = new Array(7,  00, 10, 00);
    hours[5][1] = new Array(11, 00, 14, 30);
    hours[5][2] = new Array(16, 30, 19, 00);
+   hours[6][0] = new Array(8,  00, 10, 54);
+   hours[6][1] = new Array(11, 00, 14, 30);
+   hours[6][2] = new Array(16, 30, 19, 00);
    hours[0][0] = new Array(11, 00, 14, 30);
    hours[0][1] = new Array(11, 00, 14, 30);
    hours[0][2] = new Array(16, 30, 19, 00);
