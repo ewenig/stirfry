@@ -7,7 +7,3 @@ stir-fry.pl :: parses the menu and scoops out a nice HTML file
 stirfry.js  :: javascript for highlighting the correct day & telling you if there is stir fry right now.
 
 Usage: Run stirfry.sh as a cronjob every Monday at midnight (0 0 * * 1). Change the absolute paths in stir-fry.sh and stir-fry.pl to match your web server directory.
-
-OR,
-
-Rewrite stir-fry.pl to use LWP::Simple and run it as a standard CGI script.
