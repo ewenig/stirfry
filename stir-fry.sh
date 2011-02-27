@@ -1,4 +1,10 @@
 #!/bin/bash
+#Remember to export $STIRFRY_DIR first
 
-wget -O /users/u18/eli/stirfry/gracies-weekly.cfm http://finweb.rit.edu/diningservices/forms/webmenus/gracies-weekly.cfm
-perl /users/u18/eli/stirfry/stir-fry.pl > /users/u18/eli/public_html/stirfry/index.htm
+if [ -n "$STIRFRY_DIR" ]; then
+   cd $STIRFRY_DIR
+   wget -O gracies-weekly.cfm http://finweb.rit.edu/diningservices/forms/webmenus/gracies-weekly.cfm
+   perl stir-fry.pl > ~/public_html/stirfry/index.htm
+else
+   echo "Could not change directory - did you export \$STIRFRY_DIR?"
+fi

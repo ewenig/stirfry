@@ -2,37 +2,18 @@
 
 use warnings;
 use strict;
-use lib '/users/u18/eli/';
+use lib 'lib/';
 use XML::DOM::Lite qw(Parser);
+use Gracies::StirFry::Parser;
 use CGI;
 
-sub get_stir_fry {
-	my @weekdays = ('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday');
-	my @stirfry;
-	my ($node,$text,$id,$j);
-	my $dom = Parser->parseFile("/users/u18/eli/stirfry/gracies-weekly.cfm", whitespace => 'strip');
-	for (my $i=0;$i<7;$i++) {
-		for (my $k=0;$k<3;$k++) {
-			$j=0;
-			$id = 'meal_' . $weekdays[$i] . '_' . ($k+1);
-			$node = $dom->getElementById($id);
-			if ($node eq "") { $stirfry[$i][$k] = "No data"; $j=1;}
-			if ($j==0) {
-				$text = $node->xml;
-				if ($text =~ m/Stir( |-)Fry/i) {
-					$stirfry[$i][$k] = "Yes";
-				} else {
-					$stirfry[$i][$k] = "No";
-				}
-			}
-		}
-	}
-
-	return @stirfry;
-}
 
 my @weekdays = ('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday');
-my @stir_fry = get_stir_fry(@weekdays);
+my $parser = Gracies::StirFry::Parser->new({
+						file => './gracies-weekly.cfm'
+						});
+
+my @stir_fry = $parser->get_stir_fry(@weekdays);
 
 my $breakfast = 0;
 for (my $i=0;$i<7;$i++) {
