@@ -8,7 +8,7 @@ use 5.10.1;
 
 =head1 NAME
 
-Gracies::StirFry::Parser - Parses the Gracie's Weekly Menu HTML file and returns an array representing when there is stir fry.
+Gracies::StirFry::Parser - A stirfry-focused parser for the Gracie's Menu website
 
 =head1 SYNOPSIS
 
