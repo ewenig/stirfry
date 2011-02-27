@@ -22,7 +22,7 @@ my @stirfry = $parser->get_stir_fry;
 
 Parses the Gracie's Weekly Menu HTML file and returns an array representing when there is stir fry.
 
-The Gracie's Weekly Menu is currently located at
+The Gracie's Weekly Menu is currently located at http://finweb.rit.edu/diningservices/forms/webmenus/gracies-weekly.cfm
 
 =cut
 
@@ -78,7 +78,7 @@ __PACKAGE__->meta->make_immutable;
 
 =head1 AUTHOR
 
-Eli Wenig,<lt>eli@csh.rit.edu<gt>
+Eli Wenig, <lt>eli@csh.rit.edu<gt>
 
 =head1 COPYRIGHT AND LICENSE
 

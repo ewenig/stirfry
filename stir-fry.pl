@@ -1,7 +1,14 @@
 #!/usr/bin/perl
+# stir-fry.pl
+# Copyright (C) 2011 by Eli Wenig
+# This program is free software; you can redistribute it and/or modify
+# it under the same terms as Perl itself, either Perl version 5.10.1 or,
+# at your option, any later version of Perl 5 you may have available.
+
 
 use warnings;
 use strict;
+use 5.10.1;
 use lib 'lib/';
 use XML::DOM::Lite qw(Parser);
 use Gracies::StirFry::Parser;
