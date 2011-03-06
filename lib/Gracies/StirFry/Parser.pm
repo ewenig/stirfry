@@ -32,7 +32,7 @@ use XML::DOM::Lite qw(Parser);
 use Moose;
 
 has 'file' => (
-    is  => 'ro',
+	is  => 'ro',
 	isa => 'Str'
 );
 
@@ -47,7 +47,7 @@ Using the file name, parses for stir fry.
 =cut
 
 sub get_stir_fry {
-    my $self = shift;
+	my $self = shift;
 	my @weekdays = ('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday');
 	my @stirfry;
 	my ($node,$text,$id,$j);
