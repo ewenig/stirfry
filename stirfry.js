@@ -30,7 +30,7 @@ function init() {
 }
 
 function disp_section(title,body,weekday) {
-   if (weekday == 4) {
+   if (weekday == 5) {
       var mar = document.createElement('marquee');
       mar.innerHTML = "IT'S STIR FRIDAY";
       mar.setAttribute('scrollamount','50');
