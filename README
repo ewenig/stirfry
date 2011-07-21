@@ -7,4 +7,4 @@ stir-fry.pl :: parses the menu and scoops out a nice HTML file
 stirfry.js  :: javascript for highlighting the correct day & telling you if there is stir fry right now.
 lib/Gracies/StirFry/Parser.pm :: parser module for Gracie's menu
 
-Usage: Export $STIRFRY_DIR to your stirfry directory, and run stirfry.sh as a cronjob every Monday at midnight (0 0 * * 1). Change the absolute paths in stir-fry.sh and stir-fry.pl to match your web server directory.
+Usage: Change $STIRFRY_DIR to your stirfry directory inside of the stir-fry.sh script, and run stirfry.sh as a cronjob every Monday at midnight (0 0 * * 1). Change the absolute paths in stir-fry.sh and stir-fry.pl to match your web server directory.
