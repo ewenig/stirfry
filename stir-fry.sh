@@ -1,5 +1,6 @@
 #!/bin/bash
-#Remember to export $STIRFRY_DIR first
+#Remember to change the $STIRFRY_DIR first
+$STIRFRY_DIR='/path/to/sitrfry/'
 
 if [ -n "$STIRFRY_DIR" ]; then
    cd $STIRFRY_DIR
